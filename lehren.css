@@ -4,7 +4,7 @@ html {
 }
 
 body {
-    background:linear-gradient(to top,#0000005b), url(homme.jpg) center no-repeat fixed;
+    background: linear-gradient(to top, #0000005b), url(homme.jpg) center no-repeat fixed;
     background-size: cover;
     margin: 0;
     font-family: system-ui, sans-serif;
@@ -12,6 +12,9 @@ body {
 
 .navbar-container {
     backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
 }
 
 .navbar,
@@ -40,18 +43,23 @@ body {
     text-decoration: none;
 }
 
-.home{
+.home {
     color: rgb(253, 252, 252);
     font-size: 20px;
 }
 
-.nav-links li.home a{
+.nav-links li.home a {
     color: white;
 }
 
 .nav-links li a {
     text-decoration: none;
     color: rgb(128, 126, 126);
+
+}
+
+.nav-links li :hover {
+    color: rgb(253, 254, 255);
 }
 
 .nav-links li {
@@ -61,6 +69,11 @@ body {
 
 .nav-links li:not(.home):hover {
     transform: scale(1.4);
+}
+
+.divider {
+    border: 1px solid rgba(78, 78, 78, 0.562);
+    margin: 20px 0;
 }
 
 .s {
@@ -125,16 +138,46 @@ body {
     background: linear-gradient(to right, rgb(0, 0, 0), rgb(40, 72, 94));
     transform: scale(1.2);
 }
-.button-2 a, .button-1 a {
+
+.button-2 a,
+.button-1 a {
     text-decoration: none;
     color: rgb(230, 230, 230);
 }
-.divider{
-    border: 1px solid rgba(78, 78, 78, 0.562);
-    margin: 20px 0;
-}
-@media (max-width: 500px) {
-    body{
-        min-height: 100vh;
+
+
+
+@media (max-width: 600px) {
+
+    .nav-links{
+        padding: 0;
+        gap: 30px;
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar{
+        display: none;
+    }
+    .nav-links li:not(.home):hover{
+        transform: none;
+    }
+    .nav-logo{
+        flex-shrink: 0;
+        margin-right: 30px;
+        margin-left: 0;
+    }
+    .navbar{
+        padding: 12px 12px;
+        display: flex;
+        justify-content: flex-start;
+        gap:12px;
+    }
+    .nav-links li{
+        flex-shrink: 0;
+
     }
 }

@@ -1,0 +1,113 @@
+html {
+    background-color: #111;
+    overscroll-behavior: none;
+}
+
+body {
+    background: linear-gradient(to top, #0000005b), url(homme.jpg) center no-repeat fixed;
+    background-size: cover;
+    min-height: 180vh;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, sans-serif;
+}
+
+
+
+.navbar-container {
+    backdrop-filter: blur(10px);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar,
+.nav-links,
+.nav-logo {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 10px;
+    margin-bottom: 0;
+    gap: 30px;
+    color: rgb(255, 255, 255);
+    list-style: none;
+}
+
+.nav-logo {
+    margin-top: 15px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.nav-links {
+    margin-right: 20px;
+    font-size: 17px;
+    text-decoration: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: rgb(128, 126, 126);
+}
+
+.nav-links li.contact a {
+    color: white;
+    cursor: default;
+}
+
+.nav-links li:not(.contact):hover a {
+    transform: scale(1.4);
+}
+
+.nav-links li {
+    text-decoration: none;
+    transition: all 0.5s ease;
+}
+
+.nav-links li:not(.contact):hover {
+    transform: scale(1.4);
+}
+
+.nav-links li :hover {
+    color: rgb(253, 254, 255);
+}
+.divider {
+    border: 1px solid rgba(78, 78, 78, 0.562);
+    margin: 20px 0 0;
+}
+@media (max-width: 600px) {
+
+    .nav-links{
+        padding: 0;
+        gap: 30px;
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+        white-space: nowrap;
+        justify-content: flex-start;
+        scrollbar-width: none;
+    }
+    .nav-links::-webkit-scrollbar{
+        display: none;
+    }
+    .nav-links li:not(.contact):hover{
+        transform: none;
+    }
+    .nav-logo{
+        flex-shrink: 0;
+        margin-right: 30px;
+    }
+    .navbar{
+        padding: 12px 12px;
+        display: flex;
+        justify-content: flex-start;
+        gap:12px;
+    }
+    .nav-links li{
+        flex-shrink: 0;
+
+    }
+}
